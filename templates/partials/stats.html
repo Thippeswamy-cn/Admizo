@@ -1,0 +1,24 @@
+<section class="metrics" aria-labelledby="metrics-title">
+  <div class="shell">
+    <div class="metric-heading reveal">
+      <p class="eyebrow light"><span></span> At a glance</p>
+      <h2 id="metrics-title">Measured by the value<br>we create.</h2>
+    </div>
+    <div class="metric-grid">
+      {% if metrics %}
+        {% for metric in metrics %}
+          <div class="metric reveal">
+            <strong data-counter="{{ metric.value }}">{{ metric.value }}</strong>
+            <span>{{ metric.label }}</span>
+            {% if metric.note %}<small>{{ metric.note }}</small>{% endif %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="metric placeholder reveal"><strong>—</strong><span>Business domains</span><small>Verified figure pending</small></div>
+        <div class="metric placeholder reveal"><strong>—</strong><span>Projects delivered</span><small>Verified figure pending</small></div>
+        <div class="metric placeholder reveal"><strong>—</strong><span>Clients served</span><small>Verified figure pending</small></div>
+        <div class="metric placeholder reveal"><strong>—</strong><span>Markets reached</span><small>Verified figure pending</small></div>
+      {% endif %}
+    </div>
+  </div>
+</section>

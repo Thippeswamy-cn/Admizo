@@ -1,0 +1,26 @@
+{% load static %}
+<header class="site-header" data-header>
+  <div class="header-inner shell">
+    <a class="brand" href="#top" aria-label="ADMIEZO home">
+      <span class="brand-symbol" aria-hidden="true"><img src="{% static 'images/admiezo-logo.png' %}" alt=""></span>
+      <span class="brand-name">ADMIEZO</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="sr-only">Open menu</span><i></i><i></i>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+      <a href="#top">Home</a>
+      <a href="#about">About us</a>
+      <a href="#businesses">Our businesses</a>
+      <a href="#technology">Technology</a>
+      <a href="#projects">Projects</a>
+      <a href="#insights">Insights</a>
+      <a href="#careers">Careers</a>
+      <a href="#contact" class="nav-contact">Contact us</a>
+    </nav>
+
+    <a class="button button-sm header-cta" href="#contact">Let's work together <span>↗</span></a>
+  </div>
+</header>

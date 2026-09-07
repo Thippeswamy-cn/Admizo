@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ADMIEZO is a technology-driven company building businesses and enabling lasting growth across multiple industries.">
+  <meta name="theme-color" content="#07111f">
+  <title>{% block title %}ADMIEZO — Building businesses. Enabling growth.{% endblock %}</title>
+  <link rel="icon" href="{% static 'images/admiezo-logo.png' %}" type="image/png">
+  <link rel="preload" as="image" href="{% static 'images/admiezo-hero-real.jpg' %}" fetchpriority="high">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <script src="{% static 'js/vendor/gsap.min.js' %}" defer></script>
+  <script src="{% static 'js/vendor/ScrollTrigger.min.js' %}" defer></script>
+  <script src="{% static 'js/site.js' %}" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <filter id="brand-matte" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  4 4 0 0 -0.9" />
+      </filter>
+    </defs>
+  </svg>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  {% include 'partials/header.html' %}
+  {% if messages %}
+    <div class="toast-stack" aria-live="polite">
+      {% for message in messages %}<div class="toast">{{ message }}</div>{% endfor %}
+    </div>
+  {% endif %}
+  <main id="main-content">{% block content %}{% endblock %}</main>
+  {% include 'partials/footer.html' %}
+</body>
+</html>

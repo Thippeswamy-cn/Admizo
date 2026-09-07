@@ -1,0 +1,37 @@
+{% load static %}
+<section class="section projects" id="projects" aria-labelledby="projects-title">
+  <div class="shell">
+    <div class="section-intro compact reveal">
+      <div><p class="eyebrow"><span></span> Capabilities in practice</p><h2 id="projects-title">Ideas brought into<br><em>the real world.</em></h2></div>
+      <p>Technology, property and business expertise applied to practical opportunities. <small class="section-note">Representative photography is used until verified ADMIEZO case studies are supplied.</small></p>
+    </div>
+
+    <div class="project-grid">
+      {% if projects %}
+        {% for project in projects %}
+          <article class="project-card reveal">
+            <div class="project-visual">
+              {% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy">{% endif %}
+              <span class="project-tag">{{ project.category }}</span>
+            </div>
+            <div class="project-copy"><h3>{{ project.title }}</h3><p>{{ project.summary }}</p>{% if project.case_study_url %}<a href="{{ project.case_study_url }}" target="_blank" rel="noopener">View case study ↗</a>{% endif %}</div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <article class="project-card feature reveal">
+          <div class="project-visual"><img src="{% static 'images/work-technology.jpg' %}" alt="A live analytics dashboard displayed on a computer" loading="lazy"><span class="project-tag">Technology</span></div>
+          <div class="project-copy"><h3>Data-led digital platforms</h3><p>Useful software experiences that help teams see clearly, decide confidently and work efficiently.</p></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-visual"><img src="{% static 'images/work-real-estate.jpg' %}" alt="Modern commercial towers viewed from street level" loading="lazy"><span class="project-tag">Real estate</span></div>
+          <div class="project-copy"><h3>Places designed for lasting value</h3><p>Property opportunities considered through development, management and long-term commercial value.</p></div>
+        </article>
+        <article class="project-card reveal">
+          <div class="project-visual"><img src="{% static 'images/work-business.jpg' %}" alt="A business team collaborating around technology in a working office" loading="lazy"><span class="project-tag">Business development</span></div>
+          <div class="project-copy"><h3>Strategy built around opportunity</h3><p>Market insight, partnerships and practical execution brought together to support responsible growth.</p></div>
+        </article>
+      {% endif %}
+    </div>
+    {% if not projects %}<p class="photo-credit">Representative photography: Luke Chesser, Sean Pollock and Austin Distel via Unsplash.</p>{% endif %}
+  </div>
+</section>

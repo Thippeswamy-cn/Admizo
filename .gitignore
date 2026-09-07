@@ -1,0 +1,11 @@
+.env
+.venv/
+tmp/
+__pycache__/
+*.py[cod]
+db.sqlite3
+staticfiles/
+.DS_Store
+.chrome-audit*/
+.edge-audit*/
+*-audit*.png

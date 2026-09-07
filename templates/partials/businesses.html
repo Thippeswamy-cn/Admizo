@@ -1,0 +1,55 @@
+{% load static %}
+<section class="section businesses" id="businesses" aria-labelledby="business-title">
+  <div class="shell">
+    <div class="section-intro reveal">
+      <div>
+        <p class="eyebrow"><span></span> Our ecosystem</p>
+        <h2 id="business-title">Multiple businesses.<br><em>One vision.</em></h2>
+      </div>
+      <p>We connect technology with commercial insight to build stronger businesses, enter new markets and create sustainable value.</p>
+    </div>
+
+    <div class="business-grid">
+      {% for business in businesses %}
+        <article class="business-card accent-{{ business.accent }} reveal" style="--delay: {{ forloop.counter0 }}">
+          <div class="business-media" aria-hidden="true">
+            {% if business.image %}
+              <img src="{{ business.image.url }}" alt="" loading="lazy">
+            {% elif business.icon == 'building' %}
+              <img src="{% static 'images/work-real-estate.jpg' %}" alt="" loading="lazy">
+            {% elif business.icon == 'signal' %}
+              <img src="{% static 'images/work-promotions.jpg' %}" alt="" loading="lazy">
+            {% elif business.icon == 'chart' %}
+              <img src="{% static 'images/work-business.jpg' %}" alt="" loading="lazy">
+            {% elif business.icon == 'compass' %}
+              <img src="{% static 'images/work-ventures.jpg' %}" alt="" loading="lazy">
+            {% else %}
+              <img src="{% static 'images/work-technology.jpg' %}" alt="" loading="lazy">
+            {% endif %}
+          </div>
+          <div class="card-top">
+            <span class="business-number">0{{ forloop.counter }}</span>
+            <span class="business-icon" aria-hidden="true">
+              {% if business.icon == 'building' %}
+                <svg viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14M8 9h2m4 0h2M8 13h2m4 0h2M8 17h2m4 0h2M2 21h20"/></svg>
+              {% elif business.icon == 'signal' %}
+                <svg viewBox="0 0 24 24"><path d="M4 18V9m5 9V5m5 13v-7m5 7V3M2 21h20"/></svg>
+              {% elif business.icon == 'chart' %}
+                <svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-9M15 6h6v6"/></svg>
+              {% elif business.icon == 'compass' %}
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+              {% else %}
+                <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg>
+              {% endif %}
+            </span>
+          </div>
+          <div class="card-copy">
+            <h3>{{ business.title }}</h3>
+            <p>{{ business.summary }}</p>
+          </div>
+          <a href="#contact" aria-label="Explore {{ business.title }}">Explore <span>↗</span></a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

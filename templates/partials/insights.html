@@ -1,0 +1,14 @@
+<section class="section insights" id="insights" aria-labelledby="insights-title">
+  <div class="shell">
+    <div class="insights-heading reveal"><div><p class="eyebrow"><span></span> Ideas & perspectives</p><h2 id="insights-title">Thinking ahead.</h2></div><p>Perspectives on technology, enterprise and the opportunities shaping tomorrow.</p></div>
+    <div class="insight-list">
+      {% if insights %}
+        {% for insight in insights %}<article class="reveal"><small>{{ insight.category }}{% if insight.published_on %} · {{ insight.published_on|date:'M Y' }}{% endif %}</small><h3>{{ insight.title }}</h3><p>{{ insight.summary }}</p>{% if insight.external_url %}<a href="{{ insight.external_url }}" target="_blank" rel="noopener" aria-label="Read {{ insight.title }}">↗</a>{% endif %}</article>{% endfor %}
+      {% else %}
+        <article class="reveal"><small>Perspective · Coming soon</small><h3>Where technology creates real business advantage</h3><p>Reserved for an approved ADMIEZO insight.</p><span>↗</span></article>
+        <article class="reveal"><small>Growth · Coming soon</small><h3>Building for value beyond the next quarter</h3><p>Reserved for an approved ADMIEZO insight.</p><span>↗</span></article>
+        <article class="reveal"><small>Enterprise · Coming soon</small><h3>Turning complexity into a clear path forward</h3><p>Reserved for an approved ADMIEZO insight.</p><span>↗</span></article>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="contact-lines" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="shell contact-grid">
+    <div class="contact-copy reveal">
+      <p class="eyebrow light"><span></span> Start a conversation</p>
+      <h2 id="contact-title">Have an idea?<br>Let's build <em>what's next.</em></h2>
+      <p>We turn ideas, opportunities and business challenges into meaningful solutions.</p>
+      <div class="contact-meta">
+        <span>New business enquiries</span>
+        <b>Email address pending verification</b>
+        <small>Use the enquiry form to reach the ADMIEZO team.</small>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" method="post" action="{% url 'home' %}#contact" novalidate>
+      {% csrf_token %}
+      <div class="field-row">
+        <div class="field"><label for="{{ form.name.id_for_label }}">Name</label>{{ form.name }}{{ form.name.errors }}</div>
+        <div class="field"><label for="{{ form.email.id_for_label }}">Work email</label>{{ form.email }}{{ form.email.errors }}</div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="{{ form.company.id_for_label }}">Company</label>{{ form.company }}{{ form.company.errors }}</div>
+        <div class="field"><label for="{{ form.phone.id_for_label }}">Phone</label>{{ form.phone }}{{ form.phone.errors }}</div>
+      </div>
+      <div class="field"><label for="{{ form.service.id_for_label }}">I'm interested in</label>{{ form.service }}{{ form.service.errors }}</div>
+      <div class="field"><label for="{{ form.message.id_for_label }}">Your message</label>{{ form.message }}{{ form.message.errors }}</div>
+      {% if form.non_field_errors %}<div class="form-errors">{{ form.non_field_errors }}</div>{% endif %}
+      <button class="button button-orange" type="submit">Start a conversation <span>↗</span></button>
+      <p class="form-privacy">By submitting, you agree that ADMIEZO may use these details to respond to your enquiry.</p>
+    </form>
+  </div>
+</section>
