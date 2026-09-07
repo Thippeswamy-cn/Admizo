@@ -76,3 +76,5 @@ def home(request):
             "form": form,
         },
     )
+def careers(request):
+    return render(request, "partials/careers.html")

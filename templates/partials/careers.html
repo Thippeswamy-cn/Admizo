@@ -1,6 +1,1217 @@
-<section class="careers" id="careers" aria-labelledby="careers-title">
-  <div class="shell careers-inner reveal">
-    <div><p class="eyebrow"><span></span> Careers</p><h2 id="careers-title">Build what's next<br><em>with us.</em></h2></div>
-    <div><p>We value curious thinkers and practical builders who want their work to create meaningful business impact.</p><small>Verified openings will be published here as they become available.</small><a class="text-link" href="#contact">Introduce yourself <span>↗</span></a></div>
-  </div>
-</section>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Careers | Admizo</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JavaScript -->
+    <script src="/static/js/site.js" defer></script>
+
+
+    <style>
+        /* ================= SECTION 2 ANIMATION ================= */
+
+        .why-content {
+            opacity: 0;
+            transform: translateY(70px);
+        }
+
+        .why-content.show {
+            animation: sectionReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+
+        /* Heading / content entrance */
+
+        @keyframes sectionReveal {
+
+            0% {
+                opacity: 0;
+                transform: translateY(70px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* Cards start hidden */
+
+        .why-card {
+            opacity: 0;
+            transform: translateY(80px) scale(0.75);
+            filter: blur(8px);
+        }
+
+
+        /* Card pop */
+
+        .why-card.pop {
+            animation: premiumCardPop 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+
+        @keyframes premiumCardPop {
+
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.75);
+                filter: blur(8px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(-8px) scale(1.04);
+                filter: blur(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+
+        }
+
+        /* ================= TECHNOLOGY BANNER ================= */
+
+        /* ================================================= */
+        /*                TECHNOLOGY BANNER                  */
+        /* ================================================= */
+
+        .tech-banner {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 280px;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 50% 80%,
+                    #123c82 0%,
+                    #061b43 35%,
+                    #020d24 75%);
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+        }
+
+
+        /* Background glow */
+
+        .tech-glow {
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            left: 50%;
+            bottom: -380px;
+
+            transform: translateX(-50%);
+
+            background: #1677ff;
+
+            border-radius: 50%;
+
+            filter: blur(100px);
+
+            opacity: 0.35;
+
+        }
+
+
+        /* ================= LEFT TEXT ================= */
+
+        .tech-left {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 220px;
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+
+            line-height: 1.6;
+
+        }
+
+
+        .tech-left p {
+
+            margin: 0;
+
+        }
+
+
+        .tech-left strong {
+
+            color: #36cfff;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .tech-line {
+
+            width: 45px;
+
+            height: 2px;
+
+            background: #36d9ff;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* ================= RIGHT TEXT ================= */
+
+        .tech-right {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 190px;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .tech-right p {
+
+            margin: 0;
+
+        }
+
+
+        .tech-arrow {
+
+            display: block;
+
+            margin-top: 18px;
+
+            font-size: 28px;
+
+            color: #36d9ff;
+
+        }
+
+
+        /* ================= MAIN VISUAL ================= */
+
+        .tech-visual {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            width: 650px;
+
+            height: 280px;
+
+            transform: translate(-50%, -50%);
+
+        }
+
+
+        /* ================= GLOBE ================= */
+
+        /* ================= EARTH ================= */
+
+        .earth {
+
+            position: absolute;
+
+            width: 560px;
+            height: 250px;
+
+            left: 50%;
+            bottom: -145px;
+
+            transform: translateX(-50%);
+
+        }
+
+
+        /* Earth surface */
+
+        .earth-surface {
+
+            position: absolute;
+
+            width: 560px;
+            height: 300px;
+
+            left: 50%;
+            top: 0;
+
+            transform: translateX(-50%);
+
+            border-radius: 50% 50% 0 0;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(ellipse at 50% 20%,
+                    #176fc9 0%,
+                    #0a3b82 42%,
+                    #031b45 75%);
+
+            box-shadow:
+                0 -5px 35px rgba(40, 190, 255, 0.8),
+                0 -2px 8px rgba(110, 230, 255, 0.9);
+
+        }
+
+
+        /* Earth atmosphere */
+
+        .earth-glow {
+
+            position: absolute;
+
+            width: 570px;
+            height: 120px;
+
+            left: 50%;
+            top: -5px;
+
+            transform: translateX(-50%);
+
+            border-radius: 50%;
+
+            border-top: 3px solid rgba(80, 220, 255, 0.9);
+
+            box-shadow:
+                0 -5px 25px rgba(0, 190, 255, 0.8);
+
+        }
+
+
+        /* Earth grid */
+
+        .earth-grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                repeating-linear-gradient(0deg,
+                    transparent 0px,
+                    transparent 25px,
+                    rgba(80, 210, 255, 0.18) 26px),
+
+                repeating-linear-gradient(90deg,
+                    transparent 0px,
+                    transparent 35px,
+                    rgba(80, 210, 255, 0.14) 36px);
+
+            opacity: 0.7;
+
+        }
+
+
+        /* ================= LAND ================= */
+
+        .land {
+
+            position: absolute;
+
+            background: rgba(30, 120, 180, 0.65);
+
+            filter: blur(1px);
+
+        }
+
+
+        /* Left continent */
+
+        .land-1 {
+
+            width: 150px;
+            height: 70px;
+
+            left: 80px;
+            top: 75px;
+
+            border-radius:
+                60% 40% 45% 55% / 55% 60% 40% 45%;
+
+            transform: rotate(-15deg);
+
+        }
+
+
+        /* Center continent */
+
+        .land-2 {
+
+            width: 190px;
+            height: 85px;
+
+            left: 205px;
+            top: 45px;
+
+            border-radius:
+                45% 55% 50% 40% / 55% 45% 60% 40%;
+
+            transform: rotate(8deg);
+
+        }
+
+
+        /* Right continent */
+
+        .land-3 {
+
+            width: 130px;
+            height: 75px;
+
+            right: 65px;
+            top: 80px;
+
+            border-radius:
+                50% 40% 55% 45% / 45% 55% 40% 60%;
+
+            transform: rotate(-12deg);
+
+        }
+
+
+        /* Small land */
+
+        .land-4 {
+
+            width: 80px;
+            height: 45px;
+
+            left: 350px;
+            top: 115px;
+
+            border-radius: 50%;
+
+            transform: rotate(20deg);
+
+        }
+
+        /* ================= ORBITS ================= */
+
+        .orbit {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 155px;
+
+            border: 1px solid rgba(60, 210, 255, 0.5);
+
+            border-radius: 50%;
+
+            transform: translate(-50%, -50%);
+
+        }
+
+
+        .orbit-one {
+
+            width: 620px;
+            height: 100px;
+
+            transform:
+                translate(-50%, -50%) rotate(-8deg);
+
+        }
+
+
+        .orbit-two {
+
+            width: 550px;
+            height: 130px;
+
+            transform:
+                translate(-50%, -50%) rotate(12deg);
+
+        }
+
+
+        .orbit-three {
+
+            width: 430px;
+            height: 150px;
+
+            transform:
+                translate(-50%, -50%) rotate(-18deg);
+
+        }
+
+
+        /* ================= TECHNOLOGY ICONS ================= */
+
+        .tech-icon {
+
+            position: absolute;
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid rgba(70, 200, 255, 0.6);
+
+            border-radius: 8px;
+
+            background: rgba(10, 50, 110, 0.65);
+
+            backdrop-filter: blur(8px);
+
+            color: #66ddff;
+
+            font-size: 25px;
+
+            box-shadow:
+
+                0 0 20px rgba(0, 170, 255, 0.35);
+
+            animation: floatingTech 4s ease-in-out infinite;
+
+        }
+
+
+        .icon-cloud {
+
+            left: 90px;
+
+            top: 100px;
+
+        }
+
+
+        .icon-code {
+
+            left: 270px;
+
+            top: 35px;
+
+            animation-delay: 0.5s;
+
+        }
+
+
+        .icon-settings {
+
+            right: 120px;
+
+            top: 45px;
+
+            animation-delay: 1s;
+
+        }
+
+
+        .icon-database {
+
+            right: 50px;
+
+            top: 125px;
+
+            animation-delay: 1.5s;
+
+        }
+
+
+        .icon-people {
+
+            right: 210px;
+
+            top: 145px;
+
+            animation-delay: 2s;
+
+        }
+
+
+        /* ================= FLOATING ANIMATION ================= */
+
+        @keyframes floatingTech {
+
+            0% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-10px);
+
+            }
+
+            100% {
+
+                transform: translateY(0);
+
+            }
+
+        }
+
+
+        /* ================= MOVING GLOW ================= */
+
+        .tech-banner::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 100%;
+
+            height: 2px;
+
+            bottom: 42px;
+
+            left: 0;
+
+            background:
+                linear-gradient(90deg,
+                    transparent,
+                    #00d9ff,
+                    #006cff,
+                    #00d9ff,
+                    transparent);
+
+            opacity: 0.7;
+
+            animation: techFlow 4s linear infinite;
+
+        }
+
+
+        @keyframes techFlow {
+
+            0% {
+
+                transform: translateX(-100%);
+
+            }
+
+            100% {
+
+                transform: translateX(100%);
+
+            }
+
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .tech-banner {
+
+                height: 240px;
+
+                padding: 0 20px;
+
+            }
+
+
+            .tech-left {
+
+                width: 130px;
+
+                font-size: 10px;
+
+                letter-spacing: 1px;
+
+            }
+
+
+            .tech-left strong {
+
+                font-size: 10px;
+
+            }
+
+
+            .tech-right {
+
+                width: 100px;
+
+                font-size: 10px;
+
+            }
+
+
+            .tech-visual {
+
+                width: 420px;
+
+                transform:
+                    translate(-50%, -50%) scale(0.7);
+
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .tech-left {
+
+                display: none;
+
+            }
+
+
+            .tech-right {
+
+                display: none;
+
+            }
+
+
+            .tech-visual {
+
+                transform:
+                    translate(-50%, -50%) scale(0.65);
+
+            }
+
+        }
+
+        /* ================= CAREER CARDS ================= */
+
+        .career-card {
+            min-height: 190px;
+            padding: 28px 32px;
+
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+
+            transition: all 0.35s ease;
+        }
+
+        .career-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.08);
+            border-color: #d1d5db;
+        }
+
+        .career-number {
+            display: block;
+            margin-bottom: 22px;
+
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        .career-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .career-card p {
+            margin-top: 10px;
+
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 768px) {
+
+            .tech-banner {
+                height: 300px;
+            }
+
+            .tech-banner-content {
+                padding: 0 25px;
+            }
+
+            .tech-text-left,
+            .tech-text-right {
+                display: none;
+            }
+
+            .tech-visual {
+                width: 100%;
+                height: 260px;
+            }
+
+            .circle-one {
+                width: 380px;
+            }
+
+            .circle-two {
+                width: 300px;
+            }
+
+            .circle-three {
+                width: 220px;
+            }
+
+            .tech-core {
+                width: 90px;
+                height: 90px;
+            }
+
+            .node-one {
+                left: 10%;
+            }
+
+            .node-two {
+                right: 10%;
+            }
+
+            .node-three {
+                left: 18%;
+            }
+
+            .node-four {
+                right: 15%;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+  <!-- ================= CAREERS HERO ================= -->
+    <section id="careers" class="hero min-h-screen flex items-center justify-center px-5 sm:px-8 origin-center">
+
+        <div class="text-center w-full max-w-6xl">
+
+            <p class="text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-gray-500 mb-5 sm:mb-6">
+                Careers at Admizo
+            </p>
+
+            <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight">
+                Welcome to Admizo
+            </h1>
+
+            <p class="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Build your skills, explore new opportunities,
+                and grow with a team that believes in creating
+                meaningful solutions.
+            </p>
+
+            <div class="mt-8 sm:mt-10 flex flex-col items-center">
+
+                <button id="findRoleBtn" class="px-7 py-3.5 sm:px-8 sm:py-4
+               bg-black text-white rounded-full
+               hover:scale-105 transition-transform duration-300">
+                    Find Your Role
+                </button>
+
+                <!-- SEARCH BAR -->
+
+                <div id="searchBox" class="hidden mt-5 w-full max-w-xl">
+
+                    <div class="flex items-center bg-white border border-white
+            rounded-full px-5 py-3
+            shadow-sm">
+
+                        <span class="text-gray-400 text-lg mr-3">
+                            
+                        </span>
+
+                        <input type="text" placeholder="Search positions..."
+                            class="w-full outline-none text-gray-700 bg-transparent caret-black" />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= WHY ADMIZO ================= -->
+
+    <section class="why-section px-6 pt-16 pb-4 bg-gray-100">
+
+        <div class="max-w-6xl mx-auto w-full">
+
+            <div class="why-content text-center">
+
+                <!-- Small heading -->
+
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                    Life at Admizo
+                </p>
+
+
+                <!-- Main heading -->
+
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+                    More than a workplace.
+                </h2>
+
+
+                <!-- Description -->
+
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+                    At Admizo, we believe great work happens when
+                    people have the freedom to learn, create and grow.
+                </p>
+
+
+                <!-- Cards -->
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+
+
+                    <!-- LEARN -->
+
+                    <div class="why-card bg-white rounded-3xl p-8 md:p-10
+                            min-h-[280px]
+                            flex flex-col justify-between
+                            shadow-sm
+                            transition-all duration-300
+                            hover:-translate-y-3 hover:shadow-xl">
+
+                        <span class="text-sm text-gray-400">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-3xl font-bold mb-4">
+                                Learn
+                            </h3>
+
+                            <p class="text-gray-600 leading-relaxed">
+                                Learn from real projects, real challenges
+                                and the people around you.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CREATE -->
+
+                    <div class="why-card bg-white rounded-3xl p-8 md:p-10
+                            min-h-[280px]
+                            flex flex-col justify-between
+                            shadow-sm
+                            transition-all duration-300
+                            hover:-translate-y-3 hover:shadow-xl">
+
+                        <span class="text-sm text-gray-400">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-3xl font-bold mb-4">
+                                Create
+                            </h3>
+
+                            <p class="text-gray-600 leading-relaxed">
+                                Turn ideas into meaningful products
+                                and solutions that make an impact.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GROW -->
+
+                    <div class="why-card bg-white rounded-3xl p-8 md:p-10
+                            min-h-[280px]
+                            flex flex-col justify-between
+                            shadow-sm
+                            transition-all duration-300
+                            hover:-translate-y-3 hover:shadow-xl">
+
+                        <span class="text-sm text-gray-400">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3 class="text-3xl font-bold mb-4">
+                                Grow
+                            </h3>
+
+                            <p class="text-gray-600 leading-relaxed">
+                                Take ownership, explore new possibilities
+                                and grow together with Admizo.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ================= TECHNOLOGY BANNER ================= -->
+
+    <section class="tech-banner">
+
+        <!-- Background glow -->
+        <div class="tech-glow"></div>
+
+        <!-- Left Text -->
+        <div class="tech-left">
+
+            <div class="tech-line"></div>
+
+            <p>IDEAS</p>
+            <p>PEOPLE</p>
+            <p>TECHNOLOGY</p>
+
+            <strong>A BRIGHTER TOMORROW</strong>
+
+        </div>
+
+
+        <!-- Main Technology Visual -->
+
+        <div class="tech-visual">
+
+            <!-- Orbit lines -->
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="orbit orbit-three"></div>
+
+
+            <!-- Globe -->
+
+            <!-- ================= EARTH ================= -->
+
+            <div class="earth">
+
+                <div class="earth-surface">
+
+                    <!-- Land shapes -->
+                    <div class="land land-1"></div>
+                    <div class="land land-2"></div>
+                    <div class="land land-3"></div>
+                    <div class="land land-4"></div>
+
+                    <!-- Earth grid -->
+                    <div class="earth-grid"></div>
+
+                </div>
+
+                <!-- Atmosphere glow -->
+                <div class="earth-glow"></div>
+
+            </div>
+
+
+            <!-- Connection points -->
+
+            <span class="tech-dot dot-1"></span>
+            <span class="tech-dot dot-2"></span>
+            <span class="tech-dot dot-3"></span>
+            <span class="tech-dot dot-4"></span>
+            <span class="tech-dot dot-5"></span>
+
+
+            <!-- Technology Cards -->
+
+            <div class="tech-icon icon-cloud">
+                ☁
+            </div>
+
+            <div class="tech-icon icon-code">
+                &lt;/&gt;
+            </div>
+
+            <div class="tech-icon icon-settings">
+                ⚙
+            </div>
+
+            <div class="tech-icon icon-database">
+                ◉
+            </div>
+
+            <div class="tech-icon icon-people">
+                ●●
+            </div>
+
+        </div>
+
+
+        <!-- Right Text -->
+
+        <div class="tech-right">
+
+            <div class="tech-line"></div>
+
+            <p>LET'S BUILD</p>
+            <p>WHAT'S NEXT</p>
+
+            <span class="tech-arrow">
+                →
+            </span>
+
+        </div>
+
+    </section>
+    <!-- ================= BUILD YOUR CAREER ================= -->
+    <!-- ================= SECTION 3 ================= -->
+
+    <section class="career-section px-6 pt-16 pb-20 bg-white">
+
+        <div class="max-w-6xl mx-auto w-full">
+
+            <!-- LEFT SIDE HEADING -->
+            <div class="mb-12">
+
+                <p class="text-sm uppercase tracking-[0.3em] text-gray-500 mb-4">
+                    WHY ADMIZO
+                </p>
+
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold">
+                    Build your career with us.
+                </h2>
+
+                <p class="mt-6 text-gray-600 max-w-2xl text-base sm:text-lg leading-relaxed">
+                    Join a team where you can work on real projects,
+                    develop your skills, take on new challenges and
+                    build a career that keeps moving forward.
+                </p>
+
+            </div>
+
+
+            <!-- CARDS BELOW HEADING -->
+
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-6">
+
+                <!-- CARD 01 -->
+                <div class="career-card sm:col-span-3">
+                    <span class="career-number"></span>
+
+                    <h3>Real-world experience</h3>
+
+                    <p>
+                        Work on meaningful projects and gain
+                        experience beyond the classroom.
+                    </p>
+                </div>
+
+
+                <!-- CARD 02 -->
+                <div class="career-card sm:col-span-3">
+                    <span class="career-number"></span>
+
+                    <h3>Continuous learning</h3>
+
+                    <p>
+                        Keep learning, experiment with new ideas
+                        and continuously improve your skills.
+                    </p>
+                </div>
+
+
+                <!-- CARD 03 -->
+                <div class="career-card sm:col-span-2">
+                    <span class="career-number"></span>
+
+                    <h3>Collaborative team</h3>
+
+                    <p>
+                        Work alongside people who share ideas,
+                        support each other and grow together.
+                    </p>
+                </div>
+
+
+                <!-- CARD 04 -->
+                <div class="career-card sm:col-span-2">
+                    <span class="career-number"></span>
+
+                    <h3>Room to grow</h3>
+
+                    <p>
+                        Take ownership, explore opportunities
+                        and grow with the company.
+                    </p>
+                </div>
+
+
+                <!-- CARD 05 -->
+                <div class="career-card sm:col-span-2">
+                    <span class="career-number"></span>
+
+                    <h3>Make an impact</h3>
+
+                    <p>
+                        Contribute your ideas and help create
+                        solutions that make a real difference.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
