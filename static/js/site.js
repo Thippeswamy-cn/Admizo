@@ -1,4 +1,19 @@
 (() => {
+  const greeting = document.querySelector('[data-time-greeting]');
+  if (greeting) {
+    const updateGreeting = () => {
+      const hour = new Date().getHours();
+      greeting.textContent = hour >= 5 && hour < 12
+        ? 'Good morning'
+        : hour >= 12 && hour < 17 ? 'Good afternoon' : 'Good evening';
+    };
+    updateGreeting();
+    window.setInterval(updateGreeting, 60000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) updateGreeting();
+    });
+  }
+
   const header = document.querySelector('[data-header]');
   const menuButton = document.querySelector('[data-menu-toggle]');
   const nav = document.querySelector('[data-nav]');
