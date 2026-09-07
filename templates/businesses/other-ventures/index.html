@@ -1,9 +1,27 @@
 {% extends 'businesses/detail.html' %}
+{% block overview %}
+<p>New ventures begin with an opportunity that needs to be examined carefully. A promising idea still needs a clear audience, a workable operating model and a realistic understanding of the resources it requires.</p>
+<p>This division provides a starting point for enquiries about emerging initiatives and selected opportunities outside the other business areas. An enquiry opens a discussion; it does not imply an investment commitment or an agreement to participate.</p>
+{% endblock %}
 {% block business_details %}
-<h3>Emerging initiatives</h3>
-<p>Exploring new ideas that complement the company's business interests.</p>
-<h3>Opportunity assessment</h3>
-<p>Considering demand, feasibility and operational requirements before committing to an initiative.</p>
-<h3>Collaboration</h3>
-<p>Discussing potential ventures with partners and establishing a clear scope for further evaluation.</p>
+<div class="detail-service-list">
+<article><span class="detail-service-number">01</span><div><h3>Emerging initiative exploration</h3><p>Early discussions can establish what the idea involves and why it may be useful. The initial scope should focus on the problem, intended audience and evidence already available.</p><ul><li>Problem and proposed solution</li><li>Intended users or customers</li><li>Current stage and supporting evidence</li></ul></div></article>
+<article><span class="detail-service-number">02</span><div><h3>Feasibility questions</h3><p>Feasibility depends on demand, delivery requirements and practical constraints. Breaking an idea into testable questions helps identify where further investigation is needed.</p><ul><li>Demand assumptions and validation needs</li><li>Operational and technical dependencies</li><li>Resource requirements and constraints</li></ul></div></article>
+<article><span class="detail-service-number">03</span><div><h3>Collaboration opportunities</h3><p>Potential collaborators need to understand the purpose of an initiative and the role being proposed. Clear responsibilities help establish whether there is a basis for further discussion.</p><ul><li>Proposed contribution of each party</li><li>Capabilities and resources sought</li><li>Ownership and decision-making questions</li></ul></div></article>
+<article><span class="detail-service-number">04</span><div><h3>Pilot and next-step planning</h3><p>A limited pilot may help investigate a specific assumption before a larger commitment. Its scope should identify what will be evaluated and how a decision will be reached.</p><ul><li>Pilot objective and boundaries</li><li>Review criteria and information requirements</li><li>Decision points and possible next steps</li></ul></div></article>
+</div>
+{% endblock %}
+{% block process %}
+<li><h3>Introduce the idea</h3><p>Explain the problem, proposed approach and current stage in a concise brief.</p></li>
+<li><h3>Clarify the opportunity</h3><p>Discuss the audience, available evidence and what you are seeking from a collaboration.</p></li>
+<li><h3>Identify open questions</h3><p>List the feasibility, resource and responsibility questions that need resolution.</p></li>
+<li><h3>Choose a next step</h3><p>Determine whether further discussion, additional information or a defined evaluation is appropriate.</p></li>
+{% endblock %}
+{% block preparation %}
+<p>Share a non-confidential overview of the idea, any validation completed, your proposed role and the support you are seeking. Commercially sensitive materials can wait until appropriate sharing arrangements are agreed.</p>
+{% endblock %}
+{% block questions %}
+<details><summary>Does ADMIEZO provide funding for every proposal?</summary><p>No. Submitting an enquiry does not imply funding, investment, endorsement or acceptance of a proposal.</p></details>
+<details><summary>Can I submit an idea outside the listed divisions?</summary><p>Yes. Explain the opportunity and why you believe it is relevant. The team will need to assess fit and availability before any engagement.</p></details>
+<details><summary>What information should I share first?</summary><p>Begin with a concise, non-confidential description of the problem, solution, current stage and proposed collaboration. Avoid sending proprietary technical details in an initial enquiry.</p></details>
 {% endblock %}

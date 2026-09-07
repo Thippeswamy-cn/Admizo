@@ -1,9 +1,27 @@
 {% extends 'businesses/detail.html' %}
+{% block overview %}
+<p>Technology work starts with the people and processes a system needs to support. A useful digital product should make everyday tasks clearer, keep information accessible and fit the way a business operates.</p>
+<p>This division covers software, digital platforms, applications and automation. An initial discussion can establish whether your requirement calls for a new product, an improvement to an existing system or a focused integration between tools.</p>
+{% endblock %}
 {% block business_details %}
-<h3>Software and applications</h3>
-<p>Web platforms and applications shaped around business workflows and customer needs.</p>
-<h3>Automation and digital platforms</h3>
-<p>Connected processes that reduce repetitive work and make information easier to use.</p>
-<h3>Emerging technologies</h3>
-<p>Exploring new tools against practical requirements, integration needs and long-term maintainability.</p>
+<div class="detail-service-list">
+<article><span class="detail-service-number">01</span><div><h3>Web platforms and business applications</h3><p>Customer-facing websites, internal portals and operational applications can bring related tasks into a single experience. Requirements should define who uses the platform, what they need to accomplish and which information they can access.</p><ul><li>User journeys and page structure</li><li>Roles, permissions and business workflows</li><li>Responsive interfaces and acceptance criteria</li></ul></div></article>
+<article><span class="detail-service-number">02</span><div><h3>Workflow automation</h3><p>Repeated administrative work often moves between spreadsheets, email and separate systems. Automation planning identifies reliable triggers, validation rules and exception handling before replacing manual steps.</p><ul><li>Process mapping and repetitive-task analysis</li><li>Approvals, notifications and status tracking</li><li>Failure handling and manual review points</li></ul></div></article>
+<article><span class="detail-service-number">03</span><div><h3>Integrations and reporting</h3><p>Connected tools can reduce duplicate entry and improve access to information. The scope depends on the APIs, data quality and access permissions available in the existing environment.</p><ul><li>Data sources and integration requirements</li><li>Reporting metrics and dashboard definitions</li><li>Data validation and access controls</li></ul></div></article>
+<article><span class="detail-service-number">04</span><div><h3>Product improvement and emerging technology</h3><p>Existing products may need clearer navigation, better performance or additional functionality. New technologies should be evaluated against a specific use case and measurable acceptance criteria.</p><ul><li>Current-product review and prioritised requirements</li><li>Feasibility assessment and limited prototypes</li><li>Release planning, documentation and handover</li></ul></div></article>
+</div>
+{% endblock %}
+{% block process %}
+<li><h3>Discover</h3><p>Describe your users, current tools and the problem you want to solve. Establish which outcomes matter and which constraints the solution must respect.</p></li>
+<li><h3>Define</h3><p>Agree the workflows, features, integrations and acceptance criteria. Identify dependencies and clarify what is included in the first release.</p></li>
+<li><h3>Review</h3><p>Use agreed checkpoints to assess the proposed experience and technical approach. Resolve questions about content, access and operational ownership.</p></li>
+<li><h3>Prepare for handover</h3><p>Confirm validation, deployment responsibilities, documentation and any ongoing support arrangement before launch.</p></li>
+{% endblock %}
+{% block preparation %}
+<p>Useful inputs include a short product brief, example workflows, existing system details, integration documentation and your preferred timeline. Share sample data without passwords or confidential customer records.</p>
+{% endblock %}
+{% block questions %}
+<details><summary>Can we improve an existing application?</summary><p>An existing application can be discussed alongside a new build. Its technology, code access, documentation and current limitations will determine the feasible scope.</p></details>
+<details><summary>How are cost and delivery time decided?</summary><p>Both depend on the agreed features, integrations, content readiness and review requirements. Request a scoped proposal for your specific project.</p></details>
+<details><summary>Is ongoing support included?</summary><p>Support, hosting, maintenance and future changes should be agreed explicitly in the proposal. They should not be assumed to be included in an initial build.</p></details>
 {% endblock %}

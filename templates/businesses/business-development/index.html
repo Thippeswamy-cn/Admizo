@@ -1,9 +1,27 @@
 {% extends 'businesses/detail.html' %}
+{% block overview %}
+<p>Business development connects a company's priorities with realistic opportunities for growth. It starts by understanding the current offer, customers and capacity before deciding where to invest time and effort.</p>
+<p>This division covers strategy, market expansion, partnerships and growth opportunities. A structured brief helps distinguish what is already known from the assumptions that need further investigation.</p>
+{% endblock %}
 {% block business_details %}
-<h3>Business strategy</h3>
-<p>Clarifying priorities, commercial challenges and practical paths for growth.</p>
-<h3>Market expansion</h3>
-<p>Exploring customer needs, market fit and requirements for entering new markets.</p>
-<h3>Partnerships</h3>
-<p>Identifying complementary relationships and defining shared objectives and next steps.</p>
+<div class="detail-service-list">
+<article><span class="detail-service-number">01</span><div><h3>Business strategy</h3><p>Strategic planning brings goals, constraints and operational capacity into the same discussion. A focused scope identifies the decisions that need to be made and the information needed to support them.</p><ul><li>Current business position and objectives</li><li>Priorities, constraints and assumptions</li><li>Action planning and ownership</li></ul></div></article>
+<article><span class="detail-service-number">02</span><div><h3>Market expansion</h3><p>Entering a new market requires an understanding of customer needs, competition and the route to market. Work should be scoped around specific questions and the evidence available to answer them.</p><ul><li>Target market and customer profile</li><li>Market-entry questions and research requirements</li><li>Operational dependencies and milestones</li></ul></div></article>
+<article><span class="detail-service-number">03</span><div><h3>Partnership development</h3><p>A useful partnership starts with complementary interests and a clear purpose. Discussions should establish the intended contribution of each party and the basis for evaluating an opportunity.</p><ul><li>Partner profile and selection criteria</li><li>Collaboration objectives and responsibilities</li><li>Discussion preparation and follow-up planning</li></ul></div></article>
+<article><span class="detail-service-number">04</span><div><h3>Growth opportunity planning</h3><p>Potential initiatives compete for limited resources. A structured evaluation can help compare opportunities and establish what would need to be true for each one to proceed.</p><ul><li>Opportunity comparison and prioritisation</li><li>Resource needs and feasibility questions</li><li>Progress measures and decision checkpoints</li></ul></div></article>
+</div>
+{% endblock %}
+{% block process %}
+<li><h3>Understand the business</h3><p>Outline your offer, customer base, current capabilities and growth objective.</p></li>
+<li><h3>Frame the opportunity</h3><p>Identify the target market or partnership question and the assumptions that need validation.</p></li>
+<li><h3>Develop priorities</h3><p>Discuss possible actions, dependencies and the resources required to move forward.</p></li>
+<li><h3>Agree next steps</h3><p>Define responsibilities, review dates and the criteria for deciding whether to continue.</p></li>
+{% endblock %}
+{% block preparation %}
+<p>Prepare a short business profile, a description of your products or services, target customers and the main challenge you want to address. Include relevant market information and capacity or budget constraints.</p>
+{% endblock %}
+{% block questions %}
+<details><summary>Can we discuss an early-stage business?</summary><p>Yes. Describe the idea, work completed so far and the decisions you need help framing. The appropriate scope depends on the evidence and resources available.</p></details>
+<details><summary>Will you find partners or customers for us?</summary><p>Partner or customer introductions are not promised by this page. Any outreach or introduction activity must be explicitly agreed as part of the engagement.</p></details>
+<details><summary>What should a proposal define?</summary><p>It should identify the business question, planned activities, expected deliverables, responsibilities, timing and fees so both parties understand the intended work.</p></details>
 {% endblock %}

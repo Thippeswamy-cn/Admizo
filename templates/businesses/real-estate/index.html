@@ -1,9 +1,27 @@
 {% extends 'businesses/detail.html' %}
+{% block overview %}
+<p>Property decisions combine the needs of the people using a space with the practical requirements of development and day-to-day operations. Location, intended use, ownership information and project readiness all shape the work involved.</p>
+<p>This division covers development, property management, investment opportunities and connected services. Each enquiry needs to be considered in the context of a specific property and the responsibilities of its owners, operators and professional advisers.</p>
+{% endblock %}
 {% block business_details %}
-<h3>Property development</h3>
-<p>Considering the purpose, location and commercial requirements of development opportunities.</p>
-<h3>Property management</h3>
-<p>Coordinating property operations and services with attention to everyday usability.</p>
-<h3>Investment and connected services</h3>
-<p>Assessing property opportunities through their requirements and long-term commercial potential.</p>
+<div class="detail-service-list">
+<article><span class="detail-service-number">01</span><div><h3>Development planning</h3><p>A development brief connects the intended use of a property with its physical and commercial requirements. Early discussions help identify the information and specialist input needed to assess an opportunity.</p><ul><li>Intended use and project objectives</li><li>Site information and project-stage review</li><li>Coordination requirements and planning milestones</li></ul></div></article>
+<article><span class="detail-service-number">02</span><div><h3>Property management</h3><p>Management requirements depend on the type of property, occupancy and existing operating arrangements. A defined scope helps make routine responsibilities, service expectations and reporting clear.</p><ul><li>Operational requirements and service schedules</li><li>Maintenance coordination and issue tracking</li><li>Owner and occupier communication requirements</li></ul></div></article>
+<article><span class="detail-service-number">03</span><div><h3>Property opportunity assessment</h3><p>An opportunity needs to be understood through available property information, intended use and commercial assumptions. Financial projections and approvals require independent verification by appropriate professionals.</p><ul><li>Property brief and available documentation</li><li>Commercial objectives and evaluation criteria</li><li>Questions for legal, technical and financial review</li></ul></div></article>
+<article><span class="detail-service-number">04</span><div><h3>Connected property services</h3><p>Property work often involves multiple parties and interdependent tasks. An enquiry can clarify where coordination is needed and which specialist services must be arranged separately.</p><ul><li>Stakeholder responsibilities</li><li>Service requirements and dependencies</li><li>Progress reporting and handover expectations</li></ul></div></article>
+</div>
+{% endblock %}
+{% block process %}
+<li><h3>Share the property brief</h3><p>Provide the location, property type, intended use and the support you are seeking.</p></li>
+<li><h3>Review available information</h3><p>Identify the current project stage, available documents and information gaps that need to be resolved.</p></li>
+<li><h3>Define responsibilities</h3><p>Discuss the work involved, required specialists and the responsibilities of each party.</p></li>
+<li><h3>Agree a plan</h3><p>Confirm scope, commercial terms and review points before proceeding with an engagement.</p></li>
+{% endblock %}
+{% block preparation %}
+<p>Prepare the property location, approximate size, current use, ownership or authorisation information and your objectives. Describe the current project stage and any known operational constraints.</p>
+{% endblock %}
+{% block questions %}
+<details><summary>Are properties listed for sale on this page?</summary><p>This page describes the business area. It is not a property listing, availability statement or offer for a particular development.</p></details>
+<details><summary>Can I enquire about managing an existing property?</summary><p>Yes. Include the property type, location, current occupancy and the management responsibilities you want to discuss so the team can assess the enquiry.</p></details>
+<details><summary>Does an enquiry include legal or investment advice?</summary><p>Legal due diligence, valuations, approvals and financial advice need an explicitly agreed scope and appropriately qualified professionals. No return or approval is promised here.</p></details>
 {% endblock %}

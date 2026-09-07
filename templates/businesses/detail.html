@@ -8,13 +8,17 @@
     <p class="eyebrow">ADMIEZO</p>
     <h1>{{ business.title }}</h1>
     <p class="detail-summary">{{ business.summary }}</p>
+    <nav class="detail-sections" aria-label="Page sections">
+      <a href="#overview">Overview</a><a href="#services">Services</a><a href="#process">Process</a><a href="#enquiry">Enquire</a>
+    </nav>
   </div>
 </section>
-<section class="section business-detail-content">
+<section class="section business-detail-content" id="overview">
   <div class="shell detail-layout">
     <div>
-      <h2>Areas of focus</h2>
-      {% block business_details %}
+      <p class="eyebrow">The bigger picture</p>
+      <h2>About {{ business.title }}</h2>
+      {% block overview %}
       <p>{{ business.summary }}</p>
       <p>Contact our team to discuss your requirements, scope and next steps.</p>
       {% endblock %}
@@ -28,6 +32,39 @@
       <figcaption>Representative photography.</figcaption>
       {% endif %}
     </figure>
+  </div>
+</section>
+<section class="section detail-services" id="services">
+  <div class="shell">
+    <p class="eyebrow">What we can discuss</p>
+    <h2>Services and scope</h2>
+    {% block business_details %}<p>{{ business.summary }}</p>{% endblock %}
+  </div>
+</section>
+<section class="section business-detail-content" id="process">
+  <div class="shell">
+    <p class="eyebrow">From requirements to next steps</p>
+    <h2>Planning your engagement</h2>
+    <ol class="detail-process">{% block process %}
+      <li><h3>Define the requirement</h3><p>Share your objectives, current situation and constraints.</p></li>
+      <li><h3>Agree the scope</h3><p>Discuss responsibilities, deliverables and a suitable plan with our team.</p></li>
+      <li><h3>Confirm next steps</h3><p>Confirm availability, pricing and timelines before work begins.</p></li>
+    {% endblock %}</ol>
+  </div>
+</section>
+<section class="section detail-preparation">
+  <div class="shell detail-information">
+    <div><h2>Before we begin</h2>{% block preparation %}<p>Bring a short brief covering your objectives, budget and preferred timeline.</p>{% endblock %}</div>
+    <div><h2>Common questions</h2>{% block questions %}<details><summary>How do I get a proposal?</summary><p>Send your requirements using the enquiry link below. Scope, availability, pricing and timelines need to be confirmed by our team.</p></details>{% endblock %}</div>
+  </div>
+</section>
+<section class="section detail-enquiry" id="enquiry">
+  <div class="shell">
+    <p class="eyebrow">Start a conversation</p>
+    <h2>Discuss your {{ business.title|lower }} requirements</h2>
+    <p>Share what you are planning, where you need support and your preferred timeline. Our team can then discuss an appropriate scope and next steps.</p>
+    <a class="button" href="{% url 'home' %}?service={{ enquiry_service }}#contact">Send an enquiry <span aria-hidden="true">&rarr;</span></a>
+    <a class="detail-back" href="{% url 'business_list' %}">View all businesses &rarr;</a>
   </div>
 </section>
 {% endblock %}

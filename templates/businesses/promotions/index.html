@@ -1,9 +1,27 @@
 {% extends 'businesses/detail.html' %}
+{% block overview %}
+<p>A promotion works best when its audience, message and intended action are clear. The starting point is understanding what a business wants people to notice, understand or do, then choosing an appropriate way to reach them.</p>
+<p>This division covers brand promotions, marketing solutions and promotional planning. A campaign brief can bring together objectives, content requirements, channels and review responsibilities before activity is commissioned.</p>
+{% endblock %}
 {% block business_details %}
-<h3>Brand promotions</h3>
-<p>Shaping promotional activity around a brand's audience, message and objectives.</p>
-<h3>Marketing solutions</h3>
-<p>Planning relevant channels and content to connect businesses with their intended customers.</p>
-<h3>Campaign planning</h3>
-<p>Defining campaign scope, coordination and measures of progress before execution.</p>
+<div class="detail-service-list">
+<article><span class="detail-service-number">01</span><div><h3>Brand and campaign messaging</h3><p>Consistent messaging helps an audience understand the offer and why it is relevant. Planning should account for the brand's tone, available evidence and the action the campaign is asking people to take.</p><ul><li>Audience and objective definition</li><li>Key messages and content themes</li><li>Brand guidelines and approval requirements</li></ul></div></article>
+<article><span class="detail-service-number">02</span><div><h3>Promotional content planning</h3><p>Content requirements depend on where a promotion will appear and how audiences will encounter it. Define the required formats, source material and review process before production.</p><ul><li>Campaign content outline</li><li>Channel-specific format requirements</li><li>Asset collection and review schedule</li></ul></div></article>
+<article><span class="detail-service-number">03</span><div><h3>Channel and campaign coordination</h3><p>Different channels serve different audiences and objectives. A coordinated plan connects the campaign calendar with responsibilities, content readiness and the available budget.</p><ul><li>Channel selection criteria</li><li>Campaign calendar and dependencies</li><li>Publication responsibilities and approvals</li></ul></div></article>
+<article><span class="detail-service-number">04</span><div><h3>Measurement and review</h3><p>Evaluation begins by defining what progress means. Relevant measures depend on the campaign objective, tracking access and the reliability of the available data.</p><ul><li>Campaign objectives and reporting measures</li><li>Tracking requirements and data access</li><li>Review checkpoints and improvement priorities</li></ul></div></article>
+</div>
+{% endblock %}
+{% block process %}
+<li><h3>Brief</h3><p>Share the offer, target audience, campaign objective and any existing brand materials.</p></li>
+<li><h3>Plan</h3><p>Discuss the message, channels, content formats and campaign schedule.</p></li>
+<li><h3>Approve</h3><p>Agree responsibilities, asset requirements and sign-off checkpoints before publication.</p></li>
+<li><h3>Review</h3><p>Assess available results against the original objectives and discuss potential next steps.</p></li>
+{% endblock %}
+{% block preparation %}
+<p>Bring your brand assets, a description of the offer, the intended audience, target locations and campaign dates. State whether your budget needs to include media spend, content production or third-party costs.</p>
+{% endblock %}
+{% block questions %}
+<details><summary>Is advertising spend included?</summary><p>Media spend, production costs and third-party charges should be itemised in an agreed proposal. They are not automatically included in a service enquiry.</p></details>
+<details><summary>Can an existing brand identity be used?</summary><p>Share your current identity, brand guidelines and approved materials. These provide the starting point for consistent campaign planning.</p></details>
+<details><summary>Are leads or sales guaranteed?</summary><p>No campaign outcome is guaranteed on this page. Results depend on the offer, audience, budget, market conditions and the quality of execution and measurement.</p></details>
 {% endblock %}

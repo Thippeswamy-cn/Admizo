@@ -41,7 +41,10 @@ def business_detail(request, slug):
         "building": "work-real-estate.jpg", "signal": "work-promotions.jpg",
         "chart": "work-business.jpg", "compass": "work-ventures.jpg",
     }.get(icon, "work-technology.jpg")
-    return render(request, template, {"business": business, "business_image": f"images/{image}"})
+    return render(request, template, {
+        "business": business, "business_image": f"images/{image}",
+        "enquiry_service": slug if slug in known_slugs and slug != "other-ventures" else "other",
+    })
 
 
 def home(request):
@@ -52,7 +55,9 @@ def home(request):
             messages.success(request, "Thank you. Your message is with our team.")
             return redirect(f"{reverse('home')}?sent=1#contact")
     else:
-        form = ContactInquiryForm()
+        service = request.GET.get("service", "")
+        valid_services = {value for value, label in ContactInquiryForm.base_fields["service"].choices}
+        form = ContactInquiryForm(initial={"service": service} if service in valid_services else None)
 
     businesses = list(Business.objects.filter(is_published=True))
     metrics = CompanyMetric.objects.filter(is_published=True)

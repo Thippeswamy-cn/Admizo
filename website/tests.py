@@ -18,6 +18,15 @@ class BusinessPageTests(TestCase):
             self.assertTemplateUsed(response, f'businesses/{business["slug"]}/index.html')
             self.assertContains(response, business["summary"])
             self.assertContains(response, 'href="/#contact"')
+            self.assertContains(response, 'id="services"')
+            self.assertContains(response, 'id="process"')
+            self.assertContains(response, '<details>', count=3)
+
+    def test_business_enquiry_preselects_service(self):
+        response = self.client.get(reverse("home"), {"service": "technology"})
+        self.assertEqual(response.context["form"]["service"].value(), "technology")
+        response = self.client.get(reverse("home"), {"service": "invalid"})
+        self.assertIsNone(response.context["form"]["service"].value())
 
     def test_custom_business_and_unpublished_business(self):
         business = Business.objects.create(title="Consulting", slug="consulting", summary="Approved consulting services.")
