@@ -230,3 +230,98 @@
     window.history.replaceState({}, '', `${window.location.pathname}#contact`);
   }
 })();
+// ===== Carrers section =====
+// ================= CAREERS PAGE ANIMATIONS =================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ---------- SECTION 1 ----------
+    const hero = document.querySelector(".hero");
+
+    if (hero) {
+        let ticking = false;
+
+        function updateHeroAnimation() {
+            const scrollY = window.scrollY;
+            const progress = Math.min(scrollY / 700, 1);
+
+            const moveUp = progress * 250;
+            const scale = 1 - progress * 0.45;
+            const opacity = 1 - progress;
+
+            hero.style.transform =
+                `translateY(-${moveUp}px) scale(${scale})`;
+
+            hero.style.opacity = opacity;
+
+            ticking = false;
+        }
+
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeroAnimation);
+                ticking = true;
+            }
+        });
+    }
+
+
+    // ---------- FIND YOUR ROLE ----------
+    const findRoleBtn = document.getElementById("findRoleBtn");
+    const searchBox = document.getElementById("searchBox");
+
+    if (findRoleBtn && searchBox) {
+        findRoleBtn.addEventListener("click", () => {
+            searchBox.classList.toggle("hidden");
+        });
+    }
+
+
+    // ---------- SECTION 2 ----------
+    const whySection = document.querySelector(".why-section");
+    const whyContent = document.querySelector(".why-content");
+    const whyCards = document.querySelectorAll(".why-card");
+
+    if (whySection && whyContent && whyCards.length > 0) {
+
+        const section2Observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        whyContent.classList.add("show");
+
+                        setTimeout(() => {
+                            if (whyCards[0]) {
+                                whyCards[0].classList.add("pop");
+                            }
+                        }, 900);
+
+                        setTimeout(() => {
+                            if (whyCards[1]) {
+                                whyCards[1].classList.add("pop");
+                            }
+                        }, 1250);
+
+                        setTimeout(() => {
+                            if (whyCards[2]) {
+                                whyCards[2].classList.add("pop");
+                            }
+                        }, 1600);
+
+                        section2Observer.unobserve(entry.target);
+                    }
+                });
+
+            },
+            {
+                threshold: 0.35
+            }
+        );
+
+        section2Observer.observe(whySection);
+    }
+
+});
