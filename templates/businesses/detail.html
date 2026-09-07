@@ -45,19 +45,21 @@
 </section>
 <section class="section business-detail-content" id="process">
   <div class="shell">
-    {% if business_secondary_image %}
-    <figure class="detail-photo detail-wide-photo">
-      <div class="detail-photo-frame"><img src="{% static business_secondary_image %}" alt="{{ business.title }} industry and working environment" loading="lazy" width="1400" height="800"></div>
-      <figcaption>{{ business.title }} &middot; Representative photography via Unsplash.</figcaption>
-    </figure>
-    {% endif %}
     <p class="eyebrow">From requirements to next steps</p>
     <h2>Planning your engagement</h2>
+    <div class="detail-process-layout">
     <ol class="detail-process">{% block process %}
       <li><h3>Define the requirement</h3><p>Share your objectives, current situation and constraints.</p></li>
       <li><h3>Agree the scope</h3><p>Discuss responsibilities, deliverables and a suitable plan with our team.</p></li>
       <li><h3>Confirm next steps</h3><p>Confirm availability, pricing and timelines before work begins.</p></li>
     {% endblock %}</ol>
+    {% if business_secondary_image %}
+    <figure class="detail-photo detail-process-photo">
+      <div class="detail-photo-frame"><img src="{% static business_secondary_image %}" alt="{{ business.title }} industry and working environment" loading="lazy" width="1400" height="800"></div>
+      <figcaption>Representative photography via Unsplash.</figcaption>
+    </figure>
+    {% endif %}
+    </div>
   </div>
 </section>
 <section class="section detail-preparation">
