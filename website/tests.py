@@ -2,6 +2,33 @@ from django.test import TestCase
 from django.urls import reverse
 
 from .models import Business, ContactInquiry
+from .views import FALLBACK_BUSINESSES
+
+
+class BusinessPageTests(TestCase):
+    def test_directory_and_fallback_detail_links(self):
+        for page in [reverse("home"), reverse("business_list")]:
+            response = self.client.get(page)
+            for business in FALLBACK_BUSINESSES:
+                url = reverse("business_detail", args=[business["slug"]])
+                self.assertContains(response, f'href="{url}"')
+        for business in FALLBACK_BUSINESSES:
+            response = self.client.get(reverse("business_detail", args=[business["slug"]]))
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, f'businesses/{business["slug"]}/index.html')
+            self.assertContains(response, business["summary"])
+            self.assertContains(response, 'href="/#contact"')
+
+    def test_custom_business_and_unpublished_business(self):
+        business = Business.objects.create(title="Consulting", slug="consulting", summary="Approved consulting services.")
+        url = reverse("business_detail", args=[business.slug])
+        self.assertContains(self.client.get(url), business.summary)
+        business.is_published = False
+        business.save()
+        self.assertEqual(self.client.get(url).status_code, 404)
+
+    def test_unknown_business_returns_404(self):
+        self.assertEqual(self.client.get('/businesses/unknown/').status_code, 404)
 
 
 class HomePageTests(TestCase):

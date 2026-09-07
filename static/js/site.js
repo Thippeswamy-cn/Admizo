@@ -165,7 +165,7 @@
         scaleX: 1, ease: 'none',
         scrollTrigger: { start: 0, end: 'max', scrub: true },
       });
-      if (desktop) {
+      if (desktop && document.querySelector('.hero')) {
         gsap.fromTo('.hero-media img', { scale: 1.04, yPercent: 0 }, {
           scale: 1.15, yPercent: 7, ease: 'none',
           scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1 },

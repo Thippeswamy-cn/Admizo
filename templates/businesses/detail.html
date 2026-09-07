@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ business.title }} | ADMIEZO{% endblock %}
+{% block content %}
+<section class="business-detail-heading" id="top">
+  <div class="shell">
+    <a class="detail-back" href="{% url 'business_list' %}">&larr; Our businesses</a>
+    <p class="eyebrow">ADMIEZO</p>
+    <h1>{{ business.title }}</h1>
+    <p class="detail-summary">{{ business.summary }}</p>
+  </div>
+</section>
+<section class="section business-detail-content">
+  <div class="shell detail-layout">
+    <div>
+      <h2>Areas of focus</h2>
+      {% block business_details %}
+      <p>{{ business.summary }}</p>
+      <p>Contact our team to discuss your requirements, scope and next steps.</p>
+      {% endblock %}
+      <a class="button" href="{% url 'home' %}#contact">Discuss {{ business.title }} <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <figure>
+      {% if business.image %}
+      <img src="{{ business.image.url }}" alt="{{ business.title }}">
+      {% else %}
+      <img src="{% static business_image %}" alt="{{ business.title }}">
+      <figcaption>Representative photography.</figcaption>
+      {% endif %}
+    </figure>
+  </div>
+</section>
+{% endblock %}

@@ -471,6 +471,26 @@ h2 em, h1 em { color: var(--blue); font-family: var(--serif); font-weight: 400; 
   .header-cta:hover > .header-button-face { transform: none; }
 }
 
+.business-directory { padding-top: 100px; }
+.business-detail-heading { padding: 150px 0 48px; background: #eef4f7; color: #082449; }
+.detail-back { display: inline-block; margin-bottom: 32px; color: #1456b8; }
+.business-detail-heading h1 { font-size: 48px; line-height: 1.15; overflow-wrap: anywhere; }
+.detail-summary { max-width: 680px; margin-top: 24px; font-size: 19px; }
+.business-detail-content { background: #fff; color: #082449; }
+.detail-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; }
+.detail-layout h2 { font-size: 32px; margin-bottom: 28px; }
+.detail-layout h3 { font-size: 20px; margin: 24px 0 8px; }
+.detail-layout p { line-height: 1.75; color: #465767; }
+.detail-layout .button { margin-top: 32px; white-space: normal; text-align: center; }
+.detail-layout figure { margin: 0; }
+.detail-layout img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.detail-layout figcaption { margin-top: 12px; font-size: 12px; color: #465767; }
+@media (max-width: 820px) {
+  .business-detail-heading { padding-top: 120px; }
+  .business-detail-heading h1 { font-size: 36px; }
+  .detail-layout { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+
 /* Header contact button */
 .header-cta {
   min-height: 46px;

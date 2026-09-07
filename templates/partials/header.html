@@ -1,7 +1,7 @@
 {% load static %}
 <header class="site-header" data-header>
   <div class="header-inner shell">
-    <a class="brand" href="#top" aria-label="ADMIEZO home">
+    <a class="brand" href="{% url 'home' %}#top" aria-label="ADMIEZO home">
       <span class="brand-symbol" aria-hidden="true"><img src="{% static 'images/admiezo-logo.png' %}" alt=""></span>
       <span class="brand-name">ADMIEZO</span>
     </a>
@@ -11,16 +11,16 @@
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
-      <a href="#top">Home</a>
-      <a href="#about">About us</a>
-      <a href="#businesses">Our businesses</a>
-      <a href="#technology">Technology</a>
-      <a href="#projects">Projects</a>
-      <a href="#insights">Insights</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact" class="nav-contact">Contact us</a>
+      <a href="{% url 'home' %}#top">Home</a>
+      <a href="{% url 'home' %}#about">About us</a>
+      <a href="{% url 'home' %}#businesses">Our businesses</a>
+      <a href="{% url 'home' %}#technology">Technology</a>
+      <a href="{% url 'home' %}#projects">Projects</a>
+      <a href="{% url 'home' %}#insights">Insights</a>
+      <a href="{% url 'home' %}#careers">Careers</a>
+      <a href="{% url 'home' %}#contact" class="nav-contact">Contact us</a>
     </nav>
 
-    <a class="button button-sm header-cta" href="#contact">Let's work together <span>↗</span></a>
+    <a class="button button-sm header-cta" href="{% url 'home' %}#contact">Let's work together <span>↗</span></a>
   </div>
 </header>
