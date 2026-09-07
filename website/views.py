@@ -43,6 +43,7 @@ def business_detail(request, slug):
     }.get(icon, "work-technology.jpg")
     return render(request, template, {
         "business": business, "business_image": f"images/{image}",
+        "business_secondary_image": f"images/detail-{slug}.jpg" if slug in known_slugs else None,
         "enquiry_service": slug if slug in known_slugs and slug != "other-ventures" else "other",
     })
 

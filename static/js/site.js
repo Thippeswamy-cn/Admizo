@@ -151,6 +151,8 @@
       if (!context.conditions.motion) return;
       const desktop = context.conditions.desktop;
       document.documentElement.classList.add('scroll-animations');
+      const detailItems = gsap.utils.toArray('.detail-layout > div, .detail-photo, .detail-service-list article, .detail-process li, .detail-information > div, .detail-enquiry .shell');
+      detailItems.forEach((item) => item.classList.add('reveal'));
       const revealItems = gsap.utils.toArray('.reveal');
       revealItems.forEach((item) => item.classList.add('is-animating'));
       gsap.set(revealItems, { opacity: 0, y: desktop ? 48 : 24 });
@@ -180,6 +182,12 @@
         scaleX: 1, ease: 'none',
         scrollTrigger: { start: 0, end: 'max', scrub: true },
       });
+      gsap.utils.toArray('.detail-photo-frame img').forEach((img) => {
+        gsap.fromTo(img, { scale: 1.08 }, {
+          scale: 1, ease: 'none',
+          scrollTrigger: { trigger: img.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.8 },
+        });
+      });
       if (desktop && document.querySelector('.hero')) {
         gsap.fromTo('.hero-media img', { scale: 1.04, yPercent: 0 }, {
           scale: 1.15, yPercent: 7, ease: 'none',
@@ -199,6 +207,7 @@
       return () => {
         document.documentElement.classList.remove('scroll-animations');
         revealItems.forEach((item) => item.classList.remove('is-animating'));
+        detailItems.forEach((item) => item.classList.remove('reveal'));
         document.removeEventListener('focusin', revealFocused);
       };
     });

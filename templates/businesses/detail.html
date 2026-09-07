@@ -24,13 +24,15 @@
       {% endblock %}
       <a class="button" href="{% url 'home' %}#contact">Discuss {{ business.title }} <span aria-hidden="true">&rarr;</span></a>
     </div>
-    <figure>
+    <figure class="detail-photo">
+      <div class="detail-photo-frame">
       {% if business.image %}
       <img src="{{ business.image.url }}" alt="{{ business.title }}">
       {% else %}
       <img src="{% static business_image %}" alt="{{ business.title }}">
-      <figcaption>Representative photography.</figcaption>
       {% endif %}
+      </div>
+      {% if not business.image %}<figcaption>Representative photography.</figcaption>{% endif %}
     </figure>
   </div>
 </section>
@@ -43,6 +45,12 @@
 </section>
 <section class="section business-detail-content" id="process">
   <div class="shell">
+    {% if business_secondary_image %}
+    <figure class="detail-photo detail-wide-photo">
+      <div class="detail-photo-frame"><img src="{% static business_secondary_image %}" alt="{{ business.title }} industry and working environment" loading="lazy" width="1400" height="800"></div>
+      <figcaption>{{ business.title }} &middot; Representative photography via Unsplash.</figcaption>
+    </figure>
+    {% endif %}
     <p class="eyebrow">From requirements to next steps</p>
     <h2>Planning your engagement</h2>
     <ol class="detail-process">{% block process %}
