@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
 
     <title>Careers | Admizo</title>
 
@@ -16,7 +17,7 @@
 
 
     <style>
-        /* ================= SECTION 2 ANIMATION ================= */
+        /*SECTION 2 ANIMATION */
 
         .why-content {
             opacity: 0;
@@ -825,6 +826,7 @@
 </head>
 
 <body class="bg-white text-gray-900">
+    {% include "partials/header.html" %}
   <!-- ================= CAREERS HERO ================= -->
     <section id="careers" class="hero min-h-screen flex items-center justify-center px-5 sm:px-8 origin-center">
 
@@ -1004,7 +1006,6 @@
         </div>
 
     </section>
-    <!-- ================= TECHNOLOGY BANNER ================= -->
 
     <section class="tech-banner">
 
